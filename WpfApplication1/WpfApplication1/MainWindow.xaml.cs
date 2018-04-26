@@ -25,37 +25,25 @@ namespace WpfApplication1
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void HeightClearBtn_Click(object sender, RoutedEventArgs e)
         {
-            Console.Write("Height(m):");
-            string height = Console.ReadLine();
-            Console.Write("Weight(kg):");
-            string weight = Console.ReadLine();
+            HeightBox.Text = "";
+            //HeightBox.Background = Brushes.Red;
+        }
 
-            double BMI = double.Parse(weight) / (double.Parse(height) * double.Parse(height));
-            Console.WriteLine("BMI: " + BMI.ToString());
+        private void WeightClearBtn_Click(object sender, RoutedEventArgs e)
+        {
+            WeightBox.Text = "";
+        }
 
-            if (BMI < 18.5)
-            {
-                Console.WriteLine("體重過輕");
-            }
-            if (BMI <= 18.5 && BMI < 24)
-            {
-                Console.WriteLine("正常範圍");
-            }
-            if (BMI > 24)
-            {
-                Console.WriteLine("過重");
-            }
-            if (BMI < 16.5)
-            {
-                Console.WriteLine("免役");
-            }
-            if (BMI > 31.5)
-            {
-                Console.WriteLine("免役");
-            }
-            Console.ReadLine();
+        private void CalculateBtn_Click(object sender, RoutedEventArgs e)
+        {
+            double w = double.Parse(WeightBox.Text);
+            double h = double.Parse(HeightBox.Text) / 100 ;
+            double BMI = w / (h * h);
+            
+            TextBlock.Text = BMI.ToString();
+            Console.WriteLine("[{0:00}]");
         }
     }
 }

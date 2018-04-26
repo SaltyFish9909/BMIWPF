@@ -10,18 +10,18 @@
         
         <StackPanel Orientation="Horizontal">
             <TextBlock Margin="10 40 10 10"> 身高: </TextBlock>
-            <TextBox Width="350" Height="30" Margin="20 40 10 10"></TextBox>
-            <Button Width="55" Height="30" Margin="10 40 10 10">清除</Button>
+            <TextBox Width="350" Height="30" Margin="20 40 10 10" x:Name="HeightBox"></TextBox>
+            <Button Width="55" Height="30" Margin="10 40 10 10" x:Name="HeightClearBtn" Click="HeightClearBtn_Click">清除</Button>
         </StackPanel>
         
         <StackPanel Orientation="Horizontal">
             <TextBlock Margin="10 40 10 10"> 体重:</TextBlock>
-            <TextBox Width="350" Height="30" Margin="20 40 10 10"></TextBox>
-            <Button Width="55" Height="30" Margin="10 40 10 10">清除</Button>
+            <TextBox Width="350" Height="30" Margin="20 40 10 10" x:Name="WeightBox"></TextBox>
+            <Button Width="55" Height="30" Margin="10 40 10 10" x:Name="WeightClearBtn" Click="WeightClearBtn_Click">清除</Button>
         </StackPanel>
 
-        <Button Background="Lavender" Foreground="Black" FontSize="20"  Padding="15" Margin="50 20" Click="Button_Click">计算</Button>
+        <Button Background="Lavender" Foreground="Black" FontSize="20"  Padding="15" Margin="50 20" x:Name="CalculateBtn" Click="CalculateBtn_Click">计算</Button>
 
-        <TextBlock TextAlignment="Center" FontSize="50" Foreground="DarkCyan" Margin="50">0</TextBlock>
+        <TextBlock TextAlignment="Center" FontSize="50" Foreground="DarkCyan" Margin="50" x:Name="TextBlock">0</TextBlock>
     </StackPanel>
 </Window>

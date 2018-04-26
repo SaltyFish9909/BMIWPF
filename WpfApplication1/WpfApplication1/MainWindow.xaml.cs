@@ -27,23 +27,50 @@ namespace WpfApplication1
 
         private void HeightClearBtn_Click(object sender, RoutedEventArgs e)
         {
+            //清空
             HeightBox.Text = "";
+            
+            //使Textbox清空后变色
             //HeightBox.Background = Brushes.Red;
         }
 
         private void WeightClearBtn_Click(object sender, RoutedEventArgs e)
         {
+            //清空
             WeightBox.Text = "";
         }
 
         private void CalculateBtn_Click(object sender, RoutedEventArgs e)
         {
+            //计算BMI
             double w = double.Parse(WeightBox.Text);
             double h = double.Parse(HeightBox.Text) / 100 ;
             double BMI = w / (h * h);
             
             TextBlock.Text = BMI.ToString();
 
+        }
+
+        private void slider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            HeightBox.Text = slider.Value.ToString();
+
+            double w = double.Parse(WeightBox.Text);
+            double h = double.Parse(HeightBox.Text) / 100;
+            double BMI = w / (h * h);
+
+            TextBlock.Text = BMI.ToString();
+        }
+
+        private void slider2_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            WeightBox.Text = slider2.Value.ToString();
+
+            double w = double.Parse(WeightBox.Text);
+            double h = double.Parse(HeightBox.Text) / 100;
+            double BMI = w / (h * h);
+
+            TextBlock.Text = BMI.ToString();
         }
     }
 }

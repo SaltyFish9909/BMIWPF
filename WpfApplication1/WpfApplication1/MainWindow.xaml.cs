@@ -43,7 +43,7 @@ namespace WpfApplication1
             double BMI = w / (h * h);
             
             TextBlock.Text = BMI.ToString();
-            Console.WriteLine("[{0:00}]");
+
         }
     }
 }

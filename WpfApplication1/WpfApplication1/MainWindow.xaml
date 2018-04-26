@@ -10,18 +10,22 @@
         
         <StackPanel Orientation="Horizontal">
             <TextBlock Margin="10 40 10 10"> 身高: </TextBlock>
-            <TextBox Width="350" Height="30" Margin="20 40 10 10" x:Name="HeightBox"></TextBox>
+            <TextBox Width="350" Height="30" Margin="20 40 10 10" x:Name="HeightBox" Text="{Binding ElementName=slider,Path=Value}"></TextBox>
             <Button Width="55" Height="30" Margin="10 40 10 10" x:Name="HeightClearBtn" Click="HeightClearBtn_Click">清除</Button>
         </StackPanel>
-        
+        <Slider  Name="slider" Minimum="0" Maximum="210" TickPlacement="BottomRight" TickFrequency="1" IsSnapToTickEnabled="True"></Slider>
+
         <StackPanel Orientation="Horizontal">
             <TextBlock Margin="10 40 10 10"> 体重:</TextBlock>
-            <TextBox Width="350" Height="30" Margin="20 40 10 10" x:Name="WeightBox"></TextBox>
+            <TextBox Width="350" Height="30" Margin="20 40 10 10" x:Name="WeightBox"  Text="{Binding ElementName=slider2,Path=Value}"></TextBox>
             <Button Width="55" Height="30" Margin="10 40 10 10" x:Name="WeightClearBtn" Click="WeightClearBtn_Click">清除</Button>
         </StackPanel>
-
+        <Slider  Name="slider2" Minimum="0" Maximum="210" TickPlacement="BottomRight" TickFrequency="1" IsSnapToTickEnabled="True"></Slider>
+        
         <Button Background="Lavender" Foreground="Black" FontSize="20"  Padding="15" Margin="50 20" x:Name="CalculateBtn" Click="CalculateBtn_Click">计算</Button>
 
         <TextBlock TextAlignment="Center" FontSize="50" Foreground="DarkCyan" Margin="50" x:Name="TextBlock">0</TextBlock>
+
     </StackPanel>
+
 </Window>
